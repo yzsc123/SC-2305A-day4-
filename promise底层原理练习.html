@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const p=new Promise((resolve,reject)=>{
+        //1创建连接
+        const arr=new XMLHttpRequest();
+        arr.open('GET','url');
+        arr.send();
+        arr.onreadystatechange=function(){
+            if(xhr.readyState === 4){
+                resolve(arr.pesponse);
+            }
+        }
+    })
+    p.then(
+        function(value){
+            console.log(value);
+        },
+        function(reason){
+            console.log(reason);
+        }
+    )
+</script>
+</html>

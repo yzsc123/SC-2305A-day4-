@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //   const p =new Promise ((resolve,reject)=>{
+    //     const xhr = new XMLHttpRequest()
+    //     xhr.open("GTE","url");
+    //     xhr.send()
+    //     xhr.onreadystatechange=function(){
+    //         if(xhr.readyState === 4){
+    //             if(xhr.status >= 200 && xhr.status <300)
+    //             resolve(xhr.pesponse);
+
+    //         }else{
+    //             reject(xhr.pesponse)
+    //         }
+    //     }
+    //   })
+    //   p.then(
+    //     function (value){
+    //         console.log(value);
+    //     },
+    //     function(reason){
+    //         console.log(reason);
+    //     }
+    //   )
+
+    const p = new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "url");
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status >= 200 && xhr.status < 300) resolve(xhr.pesponse);
+        } else {
+          reject(xhr.pesponse);
+        }
+      };
+    });
+    p.then(
+      function (value) {
+        console.log(value);
+      },
+      function (season) {
+        console.log(reason);
+      }
+    );
+  </script>
+</html>

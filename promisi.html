@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//     *概念: promise数是一个容器,里面存放着异步代码
+// * 特点:
+// *1.有三种状态:进行中:pedding,已成功:resolve，已失败:reject
+// *2.状态一经凝固 就不会再改变
+// *3.状态变化有两种变化:1.pedding---resolve 2.pedding---reject
+    const p=new Promise(function(resolve,reject){
+        setTimeout(function(){
+            let data='请求数据库用户数据'
+            resolve(data);
+
+            // let err="数据请求失败";
+            // reject(err)
+        },1000);
+    });
+    p.then(res=>{
+        console.log(res,"res");
+    })
+    .catch(err=>{
+        console.log(err,"err");
+    })
+</script>
+</html>
